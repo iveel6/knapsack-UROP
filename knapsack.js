@@ -68,7 +68,7 @@ function alertLimit(){
 	
 }
 
-//Update display of knapsack' total weight and value of 
+//Update display of knapsack's total weight and value 
 function updateValues(){
 	$("#values").html('available capacity: '+(sackLimit-weight)+'kg <br>total weight: '+weight+'kg, value: $'+value);
 }
