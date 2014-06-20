@@ -1,8 +1,13 @@
+html{
+  width: 688px;
+  height: 430px;
+}
 body {
   width: 688px;
   height: 430px;
   margin: 0px auto;
-  background-image: url("images/n4.png");	
+  background-image: url("images/n4.png");
+  background-repeat: no-repeat;
   background-size:100% 100%;
 }
 
