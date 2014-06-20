@@ -5,7 +5,7 @@ var audioReset = new Audio('sounds/move.wav');
 var sackLimit = 20 //parseInt($("#knapsack").attr("data-maxweight"));
 var weight = 0;
 var value = 0;
-var bestScores =[-1,0,0]; //-1 for comparing value=0, then display best scores
+var bestScores =[-1,0,0]; //-1 will be 0 once page is loaded
 var barHeight = 274; 
 var barWidth = 30;
 var x = 3;
@@ -68,12 +68,13 @@ function alertLimit(){
 	
 }
 
-//Update display of total weight and value of knapsack
+//Update display of knapsack' total weight and value of 
 function updateValues(){
-	$("#values").html('available capacity: '+(sackLimit-weight)+'kg <br>total value: $'+value+', weight: '+weight+'kg');
+	$("#values").html('available capacity: '+(sackLimit-weight)+'kg <br>total weight: '+weight+'kg, value: $'+value);
 }
 
-//Change item position (house <-->sack)
+
+//Change position of item (house <-->sack)
 function moveItem(img){
 	var item = img.parent("div");
 	var itemWeight = parseInt(item.attr("weight"));
@@ -85,8 +86,7 @@ function moveItem(img){
         item.attr("location", 'sack');
         weight += itemWeight;
 		value +=itemValue;
-        $("#displaySack").append(item);
-		
+		$("#displaySack").append(item);
 		}else{
 			alertLimit();
 		}
@@ -94,7 +94,7 @@ function moveItem(img){
         item.attr("location", 'house');
         weight -= itemWeight;
 		value -=itemValue;
-        $("#displayHouse").append(item);
+		$("#displayHouse").append(item);
     }
 }
 
@@ -171,7 +171,7 @@ $(function(){
 		updateValues();
 		
 	})
-	//Change sounde mode
+	//Change sound mode
 	$("#help").click(function (){
 		soundChange();
 		console.log(mode);
