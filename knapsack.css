@@ -1,0 +1,219 @@
+body {
+  width: 688px;
+  height: 430px;
+  margin: 0px auto;
+  background-image: url("images/n4.png");	
+  background-size:100% 100%;
+}
+
+#burglar{
+	margin-top: 185px;
+	margin-left:190px;
+	position:absolute;
+	background-image: url("images/burglar.png");
+	background-size:100% 95%;
+	background-repeat: no-repeat;
+	width: 90px;
+	height: 100px;
+	text-align:center;
+}
+
+#bag{
+	margin-top: -100px;
+	margin-left:150px;
+	position:absolute;
+	background-image: url("images/Gold_sack.png");
+	background-size:100% 95%;
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 80px;
+	text-align:center;
+}
+
+#emptyRect{
+	fill: rgba(250, 247, 182, 0.97);
+}
+
+#fullRect{
+	fill: gold;
+}
+
+
+
+#buttons{
+	display:inline-block;
+	width:20%;
+	height: 90%;
+	overflow: auto;
+}
+
+#help{
+    margin-top:0px;
+	margin-left: 13px;
+	width: 50px;
+	height: 30px;
+	background-color: #A8CD1B;
+	border-color: rgba(135, 245, 102, 0.81);
+	border-width: 3px;
+	border-radius: 5px;
+}
+
+#reset{
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+	margin-top: 20px;
+	margin-left: 13px;
+	background-color: #A8CD1B;
+	border-color: rgba(135, 245, 102, 0.81);
+	border-width: 3px;
+}
+
+#text{
+	margin: 0px auto;
+	padding: 10px;
+	padding-left: 20px;
+	display: inline-block;
+	width:65%;
+	height: 80%;
+	background-color: #CBE32D;
+	overflow: auto;
+	border-radius: 10px;
+	border-color:rgba(135, 245, 102, 0.81);
+}
+#best{
+	font-size: 13;
+	
+}
+#values{
+	font-size: 16;
+	color:rgb(4, 113, 33);
+}
+
+#knapsack{
+	width:100%;
+	height: 100%;
+		
+    position: relative;
+	background-size:100%;
+}
+
+.side{
+	display: inline-block;
+	border-width: 0px;
+	float:left;
+	margin:5px;
+    height: 100%;
+	background-color: transparent;
+	display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+}
+
+#houseSide{
+	background-image: url("images/whouse.png");
+	background-size:100% 95%;
+	background-repeat: no-repeat;
+	width: 45%;
+	text-align:center;
+}
+
+#instructionH{
+	position:absolute;
+	top:380;
+	left:70;
+	font-size: 14;
+}
+
+#arrowL{
+	position:absolute;
+	top:380;
+	left:250;
+	background-image: url('images/arrowL.png');
+	width:25px;
+	height:20px;
+	background-size:100% 95%;
+	background-repeat: no-repeat;
+}
+
+#arrowR{
+	position:absolute;
+	top:380;
+	left:370;
+	background-image: url('images/arrowR.png');
+	width:25px;
+	height:20px;
+	background-size:100% 95%;
+	background-repeat: no-repeat;
+}
+#instructionS{
+	position:absolute;
+	top:380;
+	left:395;
+	font-size: 14;
+}
+
+#sackSide{
+	width: 50%;
+}
+
+
+.header{
+	margin:0px auto;
+    height: 30%;
+    width: 95%;
+}
+
+#displayHouse{
+    background-color: transparent;
+    height: 67%;
+	margin-left:45px;
+	width: 80%;
+	border-width: 0px;
+	margin-top: 0px;
+	
+}
+#displayBody{
+	height: 67%;
+	width: 100%;	
+	margin:0px auto;
+    background-color: transparent;
+}
+
+#displaySack{
+	display: inline-block;
+	margin-left: 8px;
+	height: 97%;
+	width: 80%;
+	background-color:#F3FAB6;
+	padding: 0px;
+	vertical-align: top;
+	border-radius: 8px; 
+
+}
+
+#displayChart{
+	display: inline-block;
+	margin: 0px auto;
+	height: 100%;
+	width: 10%;
+	
+}
+#knapsack .item {
+  display: inline-block;
+  margin: 3px;
+  text-align: center;
+  font-size: smaller;
+  font-style: italic;
+  text-indent: 0;
+}
+
+.item img{
+  max-width: 60px;
+  cursor:pointer;
+}
+
+
+
+
+
