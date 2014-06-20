@@ -11,6 +11,15 @@ var barWidth = 30;
 var x = 3;
 var scaleFunction = d3.scale.linear().domain([0,sackLimit]).range([0,barHeight]);
 var yellow = "rgba(250, 247, 182, 0.97)"
+var mode = true; //sound mode on or off
+
+function soundChange(){
+	if (mode){
+		mode=false;
+	}else{
+		mode=true;
+	}
+}
 
 //Checks if current total value could be one of highest three scores.
 //We will store highest 3 scores.
@@ -40,7 +49,7 @@ function createChart(h){
 	      .attr("id",'fullRect')
 	      .attr("width", barWidth)
 	      .attr("height",0);	
-}
+};
 
 //Update bar chart
 function drawChart(h){	
@@ -52,7 +61,7 @@ function drawChart(h){
 //Alert for too heavy choice 
 function alertLimit(){
 	console.log(sackLimit);
-	audioAlert.play();
+	if (mode){audioAlert.play();};
 	$("#emptyRect").css("stroke", "red").css("fill","red");
     window.setTimeout( function(){
 		$("#emptyRect").css("stroke","rgb(12, 244, 75)").css("fill", yellow); }, 1000);
@@ -131,7 +140,7 @@ $(function(){
     $("#displayHouse").append($(".item"));
 	
 	var texts = $('<div id="text"><div id="best"></div><div id="values"></div></div>')
-	var buttons= $("<div id='buttons'><button id='help'>QUIT</button><button id='reset'>RESET</button></div>") 
+	var buttons= $("<div id='buttons'><button id='help'>Sound</button><button id='reset'>RESET</button></div>") 
 	$("#sackSide .header").append(texts)
 	                      .append(buttons)
 	                      .append('<span id="arrowR"></span>')
@@ -152,7 +161,7 @@ $(function(){
 	
 	//Restart play by "reset" button
     $("#reset").click(function (){
-		audioReset.play();
+		if (mode){audioReset.play();};
 		isBest(value);
 		weight = 0;
 		value = 0;
@@ -162,10 +171,15 @@ $(function(){
 		updateValues();
 		
 	})
-	
+	//Change sounde mode
+	$("#help").click(function (){
+		soundChange();
+		console.log(mode);
+	});
+					 
     //Click on item ---> change its position 
     $(".item .image").click(function () {
-		audioMove.play();
+		if (mode) {audioMove.play();};
 		moveItem($(this));
 	    updateValues();
 	    drawChart(weight);
